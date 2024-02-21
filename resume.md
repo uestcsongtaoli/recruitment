@@ -1,5 +1,6 @@
 ### 简历模板
 
+- [一个简洁优雅的 XeLaTeX 简历模板](https://github.com/billryan/resume/tree/zh_CN)
 - [open-resume](https://github.com/xitanggg/open-resume) LaTex 简洁模板
 
 - [超级简历](https://www.wondercv.com/) 据说不错
