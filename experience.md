@@ -60,8 +60,10 @@ Byte-Pair Encoding，一种基于subword的分词技术
 ### 位置编码
 
 为什么要加位置编码？
+
 [Transform详解(超详细) Attention is all you need论文](https://zhuanlan.zhihu.com/p/63191028)
 ![attention 计算过程](./images/attention%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B.jpg)
+
 如果我们调整句子中词的顺序，交换Key1和Key2的位置，对应的Value1和Value2的位置也交互，最终的Attention Value值未发生变化。故无法捕捉顺序信息。
 
 Attention利用的是全局信息，交换两个词的顺序，计算出来的 Attention权重仍然相同
@@ -78,18 +80,24 @@ Attention利用的是全局信息，交换两个词的顺序，计算出来的 A
 
 一般也称为Sinusoidal位置编码
 
-$$\begin{equation}\left\{\begin{aligned}  & \boldsymbol{p}_{k,2i}=\sin\Big(k/10000^{2i/d}\Big)    \\
+$$
+\begin{equation}\left\{\begin{aligned}  & \boldsymbol{p}_{k,2i}=\sin\Big(k/10000^{2i/d}\Big)    \\
       & \boldsymbol{p}_{k, 2i+1}=\cos\Big(k/10000^{2i/d}\Big)
-  \end{aligned}\right.\end{equation}$$
+  \end{aligned}\right.\end{equation}
+$$
 
 其中 $\boldsymbol{p}_{k,2i} ,\boldsymbol{p}_{k, 2i+1}$ 分别是位置 $k$ 的编码向量的第 $2i,2i+1$ 个分量，$d$ 是位置向量的维度。
 
 三角函数式位置编码的特点有显式的生成规律
+
 #### 相对位置编码
+
 相对位置并没有完整建模每个输入的位置信息，而是在算Attention的时候考虑当前位置与被Attention的位置的相对距离，由于自然语言一般更依赖于相对位置，所以相对位置编码通常也有着优秀的表现
 
 让研究人员绞尽脑汁的Transformer位置编码-[相对位置编码](https://kexue.fm/archives/8130#%E7%9B%B8%E5%AF%B9%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81)
+
 ##### RoPE
+>
 >通过绝对位置编码的方式实现相对位置编码
 
 Attention的核心运算是内积，所以我们希望的内积的结果带有相对位置信息，因此假设存在恒等关系
