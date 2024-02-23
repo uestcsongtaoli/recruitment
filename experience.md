@@ -81,9 +81,9 @@ Attention利用的是全局信息，交换两个词的顺序，计算出来的 A
 一般也称为Sinusoidal位置编码
 
 $$
-\begin{equation}\left\{\begin{aligned}  & \boldsymbol{p}_ {k,2i}=\sin\Big(k/10000^{2i/d}\Big)    \\
+\begin{cases} \begin{aligned}  & \boldsymbol{p}_ {k,2i}=\sin\Big(k/10000^{2i/d}\Big)    \\
       & \boldsymbol{p}_ {k, 2i+1}=\cos\Big(k/10000^{2i/d}\Big)
-  \end{aligned}\right.\end{equation}
+  \end{aligned}\end{cases}
 $$
 
 其中 $\boldsymbol{p}_ {k,2i}, \boldsymbol{p}_ {k, 2i+1}$ 分别是位置 $k$ 的编码向量的第 $2i,2i+1$ 个分量， $d$ 是位置向量的维度。
