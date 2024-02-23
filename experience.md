@@ -105,7 +105,7 @@ Attention的核心运算是内积，所以我们希望的内积的结果带有�
 $$\begin{equation}\langle\boldsymbol{f}(\boldsymbol{q}, m), \boldsymbol{f}(\boldsymbol{k}, n)\rangle = g(\boldsymbol{q},\boldsymbol{k},m-n)\end{equation}
 $$
 
-推导结果是，将向量按两个一组旋转 $m\theta$，其中 $m$ 与代表词在句子中的绝对位置，$\theta$ 可用三角式的绝对位置编码函数，与向量内部的位置有关
+推导结果是，将向量按两个一组旋转 $m\theta$，其中 $m$ 与代表词在句子中的绝对位置， $\theta$ 可用三角式的绝对位置编码函数，与向量内部的位置有关
 
 ![Implementation%20of%20Rotary%20Position%20Embedding(RoPE)](./images/Implementation%20of%20Rotary%20Position%20Embedding(RoPE).png)
 
